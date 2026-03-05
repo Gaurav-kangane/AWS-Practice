@@ -1,0 +1,16 @@
+RDS Proxy
+    Amazon RDS Proxy is a fully managed service from Amazon RDS that sits between your application and the database. 
+    Its main job is to manage and reuse database connections efficiently so the database is not overloaded with too many connections.
+
+
+Running a database on an EC2 instance means you install and manage the database yourself on a virtual server provided by Amazon EC2.
+
+When companies use DB on EC2
+
+    Need full database control
+    
+    Custom database configuration
+    
+    Unsupported engines in RDS
+    
+    Cost optimization in some cases
