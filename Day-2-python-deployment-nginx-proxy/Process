@@ -1,0 +1,1 @@
+vi /etc/nginx/conf.d/flaskapp.conf
