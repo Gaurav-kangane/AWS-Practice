@@ -1,1 +1,50 @@
-vi /etc/nginx/conf.d/flaskapp.conf
+1. create one public and private server connect the private server with public server.
+
+2. Install python = yum install python3-pip
+
+3. create app.py and requirements.txt file
+
+4. pip install -r requirements.txt
+
+5. Run = python3 app.py --> the app will run on forground process
+   Run = nohup python3 app.py > flask.log 2>&1 &       --> application run on background without interacting terminal
+
+6. Create target group and add 5000 port 
+
+7. Create load balancer and add target group and check application running or not.
+
+*********************************************************************************************************************************************
+
+
+
+nginx proxy process 
+1. In this process we can access the application without load balancer and without exposing port number.
+
+2. create public server and deploy application in private server 
+
+3. Install nginx in public server --> sudo yum install nginx -y --> systemctl start nginx
+
+4. change the configuration file of nginx  --> vi /etc/nginx/conf.d/flaskapp.conf
+
+5. Add this file
+server {
+    listen 80;
+    server_name 98.81.160.29;  # add public ip
+
+    location / {
+        proxy_pass http://127.0.0.1:5000;     # add private ip of server where application is running
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+6. systemctl restart nginx 
+
+7. Take the public ip and access the application without load balancer and without exposing port number.
+
+
+
+
