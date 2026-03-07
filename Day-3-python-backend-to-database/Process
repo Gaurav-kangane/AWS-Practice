@@ -1,0 +1,42 @@
+1. sudo yum install python3-pip
+
+2. git clone
+
+3. create rds and connect the rds through mysql workbench or install mariadb server on ec2 and run below script
+
+    CREATE DATABASE IF NOT EXISTS dev;
+    USE dev;
+    
+    CREATE TABLE users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE
+    );
+
+4. create ec2 server
+
+5. pip install -r requirements.txt
+
+6. Edit the app.py file --> add rds endpoint, rds password
+
+7. Run --> nohup python3 app.py > flask.log 2>&1 &
+
+8. Run below command to check backend is connected or not
+
+curl -X POST http://localhost:5000/users/add \
+-H "Content-Type: application/json" \
+-d '{"name":"Gaurav Kangane","email":"gaurav@example.com"}'               ## for adding user
+
+
+curl http://localhost:5000/users                                          ## for getting users list
+
+
+curl -X PUT http://<EC2-IP>:5000/users/update/1 \
+-H "Content-Type: application/json" \
+-d '{"name":"Gaurav Kangane","email":"gauravk@example.com"}'              ### for updating the data
+
+
+curl -X DELETE http://localhost:5000/users/delete/1                       ### for delete the user
+
+
+
