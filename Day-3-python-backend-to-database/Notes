@@ -1,0 +1,39 @@
+An API (Application Programming Interface) is a way for two applications to communicate with each other.
+
+It allows one program to send a request and another program to return data or perform an action.
+
+Simple Example:
+When a frontend app sends a request to a backend server:
+    Frontend → API → Backend → Database
+
+Example:
+A React app sends a request to get users.
+
+The Flask API receives the request.
+
+The API fetches data from the database.
+
+The API sends the response back to the frontend.
+
+Example API Request
+curl http://localhost:5000/users
+
+The API returns data like:
+
+[
+  {
+    "id": 1,
+    "name": "Gaurav",
+    "email": "gaurav@example.com"
+  }
+]
+
+
+Common API Methods
+
+| Method | Purpose         |
+| ------ | --------------- |
+| GET    | Retrieve data   |
+| POST   | Create new data |
+| PUT    | Update data     |
+| DELETE | Remove data     |
