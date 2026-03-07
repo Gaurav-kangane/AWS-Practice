@@ -1,0 +1,19 @@
+1. Crate vpc, public subnet and private subnet, attach ig and create public and private route table, don't create NAT gateway.
+
+2. create 1 public ec2 server on public and 1 private ec2 server on private subnet
+
+3. Create IAM role and attach to both servers
+
+4. Connect public server and run command AWS S3 ls --> you will get s3 bucket list because of Internet Gateway
+
+5. connect private server and run command AWS S3 ls --> not able to get s3 list because there is no route to travel request.
+
+6. Go to vpc, choose Endpoints and create endpoint --> give name then in services search for s3 and choose com.amazonaws.ap-south-1.s3
+
+7. choose type Gateway, select vpc and select private route table then create endpoint.
+
+8. Then go to private server and run command AWS s3 ls --> you will get the list.
+
+9. You can also choose Interface in service type
+
+10. choose vpc and select private subnet, select security group and create.
