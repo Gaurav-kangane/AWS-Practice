@@ -17,3 +17,20 @@
 9. You can also choose Interface in service type
 
 10. choose vpc and select private subnet, select security group and create.
+
+
+***************************************************************************************************************************
+
+Network Interface Process (ENI)
+
+1. select private instance and go to Networking and scroll down find Network Interface and select that ENI and Go to Actions and change
+   termination behaviour --> If Enable then  disable it.
+
+2. Terminate the instance and create new instance select vpc and subnet, In additonal configuration select Network Interface and select eni
+   create instance.
+
+3. After successfully instance creation check the private IP it will be same.
+
+4. We can also create new ENI Go to Network Interface and create new ENI --> select VPC, subnet, and we can also create custom IP.
+
+5. Attach the newly created ENI to any server and check new IP is also added to the server.
