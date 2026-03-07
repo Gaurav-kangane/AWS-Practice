@@ -1,0 +1,54 @@
+VPC Endpoint
+A VPC Endpoint lets resources inside a VPC connect to AWS services privately, without using the internet, NAT Gateway, or Internet Gateway.
+In simple terms, it allows your EC2 instance inside a private subnet to access AWS services directly through the AWS network
+
+Types of VPC Endpoints
+There are three types.
+1. Gateway Endpoint
+    Used mainly for:
+    
+    Amazon S3
+    
+    DynamoDB
+
+How it works:
+Added to the route table
+Uses AWS prefix lists
+EC2 → Route Table → Gateway Endpoint → S3
+
+2. Interface Endpoint (AWS PrivateLink)
+Used for most AWS services like:
+    EC2 API
+    CloudWatch
+    SNS
+    SQS
+    Secrets Manager
+    ECR
+    KMS
+
+How it works:
+    Creates Elastic Network Interfaces (ENI) inside your subnet
+    Uses private IP addresses
+    Controlled with security groups
+    EC2 → Interface Endpoint ENI → AWS Service
+
+*******************************************************************************************************************
+
+
+ELASTIC NETWORK INTERFACE (ENI)
+
+A Network Interface in AWS (called Elastic Network Interface – ENI) is a virtual network card attached to an EC2 instance.
+It works like the network adapter in a computer, allowing the instance to communicate with the network.
+
+What a Network Interface Contains
+    An ENI includes several networking details:
+    Private IP address
+    Public IP (optional)
+    MAC address
+    Security groups
+    Subnet association
+
+e.g 
+If a server’s operating system becomes corrupted or unsupported and the server stops working properly, the client may ask to 
+create a new server but keep the same IP address as the previous one. In this situation, we can use an **Elastic Network Interface (ENI)**.
+We detach the ENI from the old EC2 instance and attach it to the new instance, which allows the new server to use the same private IP address.
