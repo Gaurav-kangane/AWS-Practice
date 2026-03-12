@@ -1,0 +1,28 @@
+VPC Peering is a networking connection between two Virtual Private Clouds that allows them to communicate privately using internal IP addresses.
+It avoids traffic going through the public internet.
+
+Two VPCs request a peering connection.
+
+The request is accepted by the other VPC owner.
+
+Route tables are updated so each VPC knows how to reach the other network.
+
+Resources (EC2, databases, etc.) communicate using private IP addresses.
+
+
+
+**********************************************************************************************************************************************
+
+
+
+1. create 2 vpc with different cidr block vpcA = 10.0.0.0/16 and vpcB = 10.1.0.0/16
+
+2. create public and private subnets in both vpc
+
+3. Go to VPC and select peering option select both the vpc and create it and then accept the peering connection from second vpc.
+
+4. Go to vpcA public route table and edit routes --> add cidr range of vpcB e.g 10.1.0.0/16 and select peering connection.
+
+5. Go to vpcB public route table and edit routes --> add cidr range of vpcB e.g 10.0.0.0/16 and select peering connection.
+
+6. you can connect the private server of vpcB from public server of vpcA.
