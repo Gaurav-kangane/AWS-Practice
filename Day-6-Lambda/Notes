@@ -1,0 +1,16 @@
+AWS Lambda is a serverless compute service from Amazon Web Services that lets you run code without managing servers.
+You simply upload your code and Lambda runs it automatically when an event occurs.
+
+You do not need to provision or manage servers. AWS handles scaling, infrastructure, and availability.
+
+
+How AWS Lambda Works
+    1.You upload code (Python, Node.js, Java, etc.)
+    2.Configure a trigger
+    3.When the event happens, Lambda executes the function automatically.
+
+Common triggers include:
+    1.Amazon S3 file upload
+    2.Amazon API Gateway API request
+    3.Amazon CloudWatch scheduled event
+    4.Amazon DynamoDB table update
