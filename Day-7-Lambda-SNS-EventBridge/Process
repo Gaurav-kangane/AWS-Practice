@@ -1,0 +1,20 @@
+1. You can also add a trigger in lambda function after trigger your lambda function will execute.
+
+2. Add Trigger --> source = S3 --> select bucket --> All object event create --> Add
+
+3. Go to s3 and uplod any file on s3 and check cloudwatch logs lambda will be triggered.
+
+**************************************************************************************************************
+
+4. In add destination --> Go to Simple Notification Service (SNS) --> create topic --> go to subcriptions --> create subcripitons --> 
+   select ARN --> select protocol --> Email --> create it.
+
+
+5. when the lambda will be triggered then you will get the notification via email.
+
+*****************************************************************************************************************
+
+6. Go to EventBridge and create rule --> use pattern form --> event type = ec2 state-change notification --> event type specification --> 
+   shutting down --> Select target = Lambda function --> select lambda and create it.
+
+7. Our lambda code will be take snapshot when ec2 instance go to shutting down state.
