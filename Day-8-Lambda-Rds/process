@@ -1,0 +1,19 @@
+We are going to create database from lambda
+
+1. create private database
+
+2. create lambda function and choose python 3.14.
+
+3. Add code and add environment variable inside configuration.
+
+4. Add pymysql layer --> create new layer -->  you can upload local laptop or you can upload from s3
+
+5. For s3 process --> create ec2 and install git and clone this repo. 
+
+6. go to repo --> aws s3 mv pymysql_layer.zip s3://bucker_name
+
+7. Add the layer --> custom layer --> choose layer and version and add it.
+
+8. Go to configuration and choose rds database --> connect to RDS database.
+
+9. Run the lambda and check database created or not.
