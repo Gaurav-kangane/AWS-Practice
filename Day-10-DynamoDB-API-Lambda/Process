@@ -7,3 +7,13 @@
 4. Run the lambda function check successfully code executed or not.
 
 5. Go to dynamoDB and check on explore items you will see table is created.
+
+6. Add new file index.html and success.html in function and deploy
+
+7. Go to console and search for api gateway create --> Rest API --> name= lambda --> create api
+
+8. Click on create method --> type = GET --> enable lambda proxy integration --> choose the lambda arn and create it and also create same for post method
+
+9. Click on deploy API --> give stage dev because in index.html file in form section we have given dev.
+
+10. Click on dev and take invoke url and access the page and give some inputs and check in dynamodb
