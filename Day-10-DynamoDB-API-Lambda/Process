@@ -1,0 +1,9 @@
+1. Create Dynamodb table --> give table name= Gaurav, partition key = email, string and create it.
+
+2. Create lambda function and attach admin role.
+
+3. Create new test event and pass .json code in test cases.
+
+4. Run the lambda function check successfully code executed or not.
+
+5. Go to dynamoDB and check on explore items you will see table is created.
