@@ -1,0 +1,36 @@
+1. Go to aws console search Elasticache and create Redis oss cache
+
+2. Create Rds and publically accessible.
+
+3. create 1 ec2 server for connecting rds.
+
+4. Connect server and install --> yum install mariadb105-server -y
+
+5. sudo yum install mariadb105-server -y 
+   sudo yum install python3-pip -y
+   pip install pymysql redis	## dependencies for cache python file 
+
+6. connect database mysql -h database-1.ct2emgmy8qpw.ap-south-1.rds.amazonaws.com -u admin -p
+
+7. Run below script 
+   CREATE DATABASE test;
+   USE test;
+
+CREATE TABLE users (
+    user_id VARCHAR(50) PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+8. Insert data into database
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES ('12345', 'John', 'Doe', 'john.doe@example.com');
+
+9. Create cache.py file and change endpoints of rds and elasticache.
+
+10. Run the file python3 cache.py
+
+11. In first time request come from rds and then run 2nd time request will came from elasticache
+
+12. Again insert new record and run request come from rds.
